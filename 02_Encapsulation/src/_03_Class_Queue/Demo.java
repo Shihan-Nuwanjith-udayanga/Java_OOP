@@ -282,3 +282,39 @@ class Demo{
     }
 }
 */
+
+// =======================================================================
+
+//Exercise
+/*
+class Node{
+    int data;
+    Node next;
+    Node(int data){this.data=data;}
+}
+class Demo{
+    public static void main(String args[]){
+        PriorityQueue q1=new PriorityQueue();
+        q1.enQueue(78);
+        q1.enQueue(34);
+        q1.enQueue(99);
+        q1.enQueue(32);
+        q1.enQueue(82);
+        q1.printQueue(); //[99,32,82,78,34]
+        q1.deQueue();
+        q1.printQueue(); //[82,32,78,34]
+
+        q1.enQueue(91);
+        q1.printQueue(); //[91,34,32,78,82]
+
+        q1.deQueue();
+        q1.printQueue(); //[82,34,32,78]
+
+        q1.deQueue();
+        q1.printQueue(); //[78,34,32]
+
+        q1.deQueue();
+        q1.printQueue(); //[34,32]
+    }
+}
+*/
