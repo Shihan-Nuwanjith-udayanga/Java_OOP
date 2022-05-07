@@ -323,3 +323,78 @@ class Demo{
 }
 */
 
+// -----------------------------------------------------------------------------------
+
+// Exercise
+/*
+class A{
+    static{
+        System.out.println("static block A");
+    }
+}
+class B extends A{
+    static{
+        System.out.println("static block B");
+    }
+}
+class C extends B{
+    static{
+        System.out.println("static block C");
+    }
+}
+class D extends B{
+    static{
+        System.out.println("static block D");
+    }
+}
+
+class Demo{
+    public static void main(String args[]){
+        new D();
+    }
+}
+*/
+
+//Exercise
+/*
+class A{
+    A(){
+        System.out.println("A()");
+    }
+    A(int i){
+        System.out.println("A(int)");
+    }
+}
+class B extends A{
+    B(){
+        super();
+        System.out.println("B()");
+    }
+    B(int i,int j){
+        super(i);
+        System.out.println("B(int,int)");
+    }
+}
+class C extends B{
+    C(){
+        System.out.println("C()");
+    }
+    C(int i){
+        super(i,i);
+        System.out.println("C(int)");
+    }
+}
+class Demo{
+    public static void main(String args[]){
+        new C();
+        System.out.println("-----------");
+        new C(100);
+        System.out.println("-----------");
+        new B();
+    }
+}
+*/
+
+// --------------------------------------------------------------------------------------
+
+
