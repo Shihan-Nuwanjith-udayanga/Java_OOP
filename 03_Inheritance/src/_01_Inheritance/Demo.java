@@ -475,3 +475,26 @@ class Demo{
     }
 }
 */
+
+
+//Case xI Method Overriding
+//-------------------------
+/*
+class Vehicle{
+    public void park(int location){
+        System.out.println("Vehicle Parking.. "+location);
+    }
+}
+class Car extends Vehicle{
+    public void park(int location){ //Method Overriding
+        System.out.println("Car Parking.. "+location);
+    }
+	*/
+/*
+	public void park(double location){ //Method Overloading
+		System.out.println("Car Parking.. "+location);
+	}
+	*//*
+
+}
+*/
