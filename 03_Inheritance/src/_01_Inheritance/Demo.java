@@ -477,7 +477,7 @@ class Demo{
 */
 
 
-//Case xI Method Overriding
+//Case XI Method Overriding
 //-------------------------
 /*
 class Vehicle{
@@ -496,5 +496,102 @@ class Car extends Vehicle{
 	}
 	*//*
 
+}
+*/
+
+//Case XII - Dynamic Method Dispatch
+//----------------------------------
+/*
+class Vehicle{
+    public void park(int location){
+        System.out.println("Vehicle Parking.. "+location);
+    }
+}
+class Car extends Vehicle{
+    public void park(int location){ //Method Overriding
+        System.out.println("Car Parking.. "+location);
+    }
+}
+
+class Demo{
+    public static void main(String args[]){
+        Vehicle v1;
+        v1=new Car();
+        v1.park(1001); //
+    }
+}
+*/
+
+//No dynamic method dispatch
+//--------------------------
+/*
+class Vehicle{
+    public void park(int location){
+        System.out.println("Vehicle Parking.. "+location);
+    }
+}
+class Car extends Vehicle{
+    public void park(int location){ //Method Overriding
+        System.out.println("Car Parking.. "+location);
+    }
+}
+
+class Demo{
+    public static void main(String args[]){
+        Car c1=new Car();
+        c1.park(1001); //
+
+        Vehicle v1=new Vehicle();
+        v1.park(2002);
+    }
+}
+*/
+
+//Dynamic method dispatch OK
+//--------------------------
+/*
+class Vehicle{
+    public void callPark(){
+        park(1111);
+    }
+    public void park(int location){
+        System.out.println("Vehicle Parking.. "+location);
+    }
+}
+class Car extends Vehicle{
+    public void park(int location){ //Method Overriding
+        System.out.println("Car Parking.. "+location);
+    }
+}
+
+class Demo{
+    public static void main(String args[]){
+        Car c1=new Car();
+        c1.callPark();
+    }
+}
+*/
+
+//Dynamic method dispatch OK
+//--------------------------
+/*
+class Vehicle{
+    Vehicle{
+        park(1111);
+    }
+    public void park(int location){
+        System.out.println("Vehicle Parking.. "+location);
+    }
+}
+class Car extends Vehicle{
+    public void park(int location){ //Method Overriding
+        System.out.println("Car Parking.. "+location);
+    }
+}
+
+class Demo{
+    public static void main(String args[]){
+        new Car();
+    }
 }
 */
