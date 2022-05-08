@@ -397,4 +397,81 @@ class Demo{
 
 // --------------------------------------------------------------------------------------
 
+//Case VIII
+//---------
+/*
+class Lion{}
+class Fox{}
+class Dog extends Fox{}
+class Cat extends Lion{}
 
+class Demo{
+    public static void main(String args[]){
+        //Lion ob=new Lion();
+        Lion ob1=new Dog(); //Illegal
+        Lion ob2=new Fox(); //Illegal
+
+        Lion ob3=new Cat(); //Legal
+        Fox f1=new Dog(); //Legal
+    }
+}
+*/
+
+//Case Ix From Case VIII
+//-----------------------
+/*
+class A{
+    int a;
+    void printA(){
+        System.out.print("A : "+a);
+    }
+}
+class X{
+    int x;
+    void printX(){
+        System.out.print("X : "+x);
+    }
+}
+class B extends A{
+    int b;
+    void printB(){
+        System.out.print("B : "+b);
+    }
+}
+class Demo{
+    public static void main(String args[]){
+        A a1=new X(); //Illegal
+
+        A a2=new B(); //Legal
+
+        B b1=new A(); //Illegal
+
+    }
+}
+*/
+
+//Case x
+//------
+/*
+class A{
+    int a;
+    void printA(){
+        System.out.print("A : "+a);
+    }
+}
+class B extends A{
+    int b;
+    void printB(){
+        System.out.print("B : "+b);
+    }
+}
+class Demo{
+    public static void main(String args[]){
+        A a1=new B();
+        a1.a=100;
+        a1.b=200;	//Illegal
+        a1.printA();
+        a1.printB();//Illegal
+    }
+}
+*/
