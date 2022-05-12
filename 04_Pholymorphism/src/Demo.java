@@ -340,7 +340,284 @@ class Demo{
 }
 */
 
+//Using Runtime Polymorphism
+//--------------------------
+
+/*
+import java.util.*;
+class WaterLevelObserver{
+    public void update(int waterLevel){
+        //
+    }
+}
+class Alarm extends WaterLevelObserver{
+    public void update(int waterLevel){
+        System.out.println(waterLevel>=50 ? "Alarm ON": "Alarm OFF");
+    }
+}
+class Display  extends WaterLevelObserver{
+    public void update(int waterLevel){
+        System.out.println("Water Level : "+waterLevel);
+    }
+}
+class SMSSender  extends WaterLevelObserver{
+    public void update(int waterLevel){
+        System.out.println("Sending SMS ..."+waterLevel);
+    }
+}
+class ControlRoom{
+    private WaterLevelObserver[] observers=new WaterLevelObserver[10];
+    private int waterLevel;
+    private int nextPos=0;
+
+    public void addWaterLevelObserver(WaterLevelObserver observer){
+        observers[nextPos++]=observer;
+    }
+    public void notifyWaterLevelObservers(){
+        for(int i=0; i<nextPos;i++){
+            observers[i].update(waterLevel);
+        }
+    }
+    public void setWaterLevel(int waterLevel){
+        if(this.waterLevel!=waterLevel){
+            this.waterLevel=waterLevel;
+            notifyWaterLevelObservers();
+        }
+    }
+}
+class Demo{
+    public static void main(String args[]){
+        ControlRoom controlRoom =new ControlRoom();
+        controlRoom.addWaterLevelObserver(new Alarm());
+        controlRoom.addWaterLevelObserver(new Display());
+        controlRoom.addWaterLevelObserver(new SMSSender());
 
 
+        Random r=new Random();
+        while(true){
+            int waterLevel=r.nextInt(101);
+            try{Thread.sleep(500);}catch(Exception exe){}
+            controlRoom.setWaterLevel(waterLevel);
+        }
+    }
+}
+*/
+
+//Adding a "Splitter"
+//-------------------
+/*
+import java.util.*;
+class WaterLevelObserver{
+    public void update(int waterLevel){
+        //
+    }
+}
+class Splitter extends WaterLevelObserver{
+    public void update(int waterLevel){
+        System.out.println(waterLevel>=75 ? "Splitter ON": "Splitter OFF");
+    }
+}
+class Alarm extends WaterLevelObserver{
+    public void update(int waterLevel){
+        System.out.println(waterLevel>=50 ? "Alarm ON": "Alarm OFF");
+    }
+}
+class Display  extends WaterLevelObserver{
+    public void update(int waterLevel){
+        System.out.println("Water Level : "+waterLevel);
+    }
+}
+class SMSSender  extends WaterLevelObserver{
+    public void update(int waterLevel){
+        System.out.println("Sending SMS ..."+waterLevel);
+    }
+}
+class ControlRoom{
+    private WaterLevelObserver[] observers=new WaterLevelObserver[10];
+    private int waterLevel;
+    private int nextPos=0;
+
+    public void addWaterLevelObserver(WaterLevelObserver observer){
+        observers[nextPos++]=observer;
+    }
+    public void notifyWaterLevelObservers(){
+        for(int i=0; i<nextPos;i++){
+            observers[i].update(waterLevel);
+        }
+    }
+    public void setWaterLevel(int waterLevel){
+        if(this.waterLevel!=waterLevel){
+            this.waterLevel=waterLevel;
+            notifyWaterLevelObservers();
+        }
+    }
+}
+class Demo{
+    public static void main(String args[]){
+        ControlRoom controlRoom =new ControlRoom();
+        controlRoom.addWaterLevelObserver(new Alarm());
+        controlRoom.addWaterLevelObserver(new Display());
+        controlRoom.addWaterLevelObserver(new SMSSender());
+        controlRoom.addWaterLevelObserver(new Splitter());
+
+        Random r=new Random();
+        while(true){
+            int waterLevel=r.nextInt(101);
+            try{Thread.sleep(500);}catch(Exception exe){}
+            controlRoom.setWaterLevel(waterLevel);
+        }
+    }
+}
+*/
+
+// -----------------------------------------------------------------------------
+
+/*
+import java.util.*;
+class WaterLevelObserver{
+    public void update(int waterLevel){
+        //
+    }
+}
+class WaterLevelObserverStack{
+    private Node top;
+    public void push(WaterLevelObserver waterLevelObserver){
+        Node node=new Node(waterLevelObserver);
+        node.next=top;
+        top=node;
+    }
+    public void callUpdate(int waterLevel){
+        Node temp=top;
+        while(temp!=null){
+            temp.observer.update(waterLevel);
+            temp=temp.next;
+        }
+    }
+    class Node{
+        private WaterLevelObserver observer;
+        private Node next;
+        Node(WaterLevelObserver observer){this.observer=observer;}
+    }
+}
+class Splitter extends WaterLevelObserver{
+    public void update(int waterLevel){
+        System.out.println(waterLevel>=75 ? "Splitter ON": "Splitter OFF");
+    }
+}
+class Alarm extends WaterLevelObserver{
+    public void update(int waterLevel){
+        System.out.println(waterLevel>=50 ? "Alarm ON": "Alarm OFF");
+    }
+}
+class Display  extends WaterLevelObserver{
+    public void update(int waterLevel){
+        System.out.println("Water Level : "+waterLevel);
+    }
+}
+class SMSSender  extends WaterLevelObserver{
+    public void update(int waterLevel){
+        System.out.println("Sending SMS ..."+waterLevel);
+    }
+}
+class ControlRoom{
+    private WaterLevelObserverStack observerStack=new WaterLevelObserverStack();
+    private int waterLevel;
+
+    public void addWaterLevelObserver(WaterLevelObserver observer){
+        observerStack.push(observer);
+    }
+    public void notifyWaterLevelObservers(){
+        observerStack.callUpdate(waterLevel);
+    }
+    public void setWaterLevel(int waterLevel){
+        if(this.waterLevel!=waterLevel){
+            this.waterLevel=waterLevel;
+            notifyWaterLevelObservers();
+        }
+    }
+}
+class Demo{
+    public static void main(String args[]){
+        ControlRoom controlRoom =new ControlRoom();
+        controlRoom.addWaterLevelObserver(new Alarm());
+        controlRoom.addWaterLevelObserver(new Display());
+        controlRoom.addWaterLevelObserver(new SMSSender());
+        controlRoom.addWaterLevelObserver(new Splitter());
+
+        Random r=new Random();
+        while(true){
+            int waterLevel=r.nextInt(101);
+            try{Thread.sleep(500);}catch(Exception exe){}
+            controlRoom.setWaterLevel(waterLevel);
+        }
+    }
+}
+*/
+
+// -----------------------------------------------------------------------------
+
+/*
+import java.util.*;
+class WaterLevelObserver{
+    public void update(int waterLevel){
+        //
+    }
+}
+class Splitter extends WaterLevelObserver{
+    public void update(int waterLevel){
+        System.out.println(waterLevel>=75 ? "Splitter ON": "Splitter OFF");
+    }
+}
+class Alarm extends WaterLevelObserver{
+    public void update(int waterLevel){
+        System.out.println(waterLevel>=50 ? "Alarm ON": "Alarm OFF");
+    }
+}
+class Display  extends WaterLevelObserver{
+    public void update(int waterLevel){
+        System.out.println("Water Level : "+waterLevel);
+    }
+}
+class SMSSender  extends WaterLevelObserver{
+    public void update(int waterLevel){
+        System.out.println("Sending SMS ..."+waterLevel);
+    }
+}
+class ControlRoom{
+    private ArrayList <WaterLevelObserver>observerList=new ArrayList<>(); //java.util.ArrayList
+    private int waterLevel;
+
+    public void addWaterLevelObserver(WaterLevelObserver observer){
+        observerList.add(observer);
+    }
+    public void notifyWaterLevelObservers(){
+        for(WaterLevelObserver observer : observerList){
+            observer.update(waterLevel);
+        }
+    }
+    public void setWaterLevel(int waterLevel){
+        if(this.waterLevel!=waterLevel){
+            this.waterLevel=waterLevel;
+            notifyWaterLevelObservers();
+        }
+    }
+}
+class Demo{
+    public static void main(String args[]){
+        ControlRoom controlRoom =new ControlRoom();
+        controlRoom.addWaterLevelObserver(new Alarm());
+        controlRoom.addWaterLevelObserver(new Display());
+        controlRoom.addWaterLevelObserver(new SMSSender());
+        controlRoom.addWaterLevelObserver(new Splitter());
+
+        Random r=new Random();
+        while(true){
+            int waterLevel=r.nextInt(101);
+            try{Thread.sleep(500);}catch(Exception exe){}
+            controlRoom.setWaterLevel(waterLevel);
+        }
+    }
+}
+*/
 
 
