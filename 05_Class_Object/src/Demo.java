@@ -64,3 +64,51 @@ class Demo{
 
 */
 
+// -----------------------------------------------------------------------------------------
+
+// ========================== Method "public int hashCode()" =============================
+
+/*
+import javax.swing.*;
+class Customer{
+    int code;
+    String name;
+    Customer(int code, String name){
+        this.code=code;
+        this.name=name;
+    }
+}
+
+class Demo{
+    public static void main(String args[]){
+        Customer c1=new Customer(1001,"Danapala");
+        Customer c2=new Customer(1002,"Gunapala");
+
+        System.out.println("c1 : "+c1.hashCode());
+        System.out.println("c2 : "+c2.hashCode());
+    }
+}
+*/
+
+
+/*
+import javax.swing.*;
+class Customer{
+    int code;
+    String name;
+    Customer(int code, String name){
+        this.code=code;
+        this.name=name;
+    }
+}
+
+class Demo{
+    public static void main(String args[]){
+        Customer c1=new Customer(1001,"Danapala");
+        Customer c2=new Customer(1002,"Gunapala");
+        System.out.println(c1);
+        String hex=Integer.toHexString(c1.hashCode());
+        System.out.println(hex);
+    }
+}
+*/
