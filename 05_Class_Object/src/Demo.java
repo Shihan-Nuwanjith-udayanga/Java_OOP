@@ -43,3 +43,24 @@ class Demo{
 }
 */
 
+// -----------------------------------------------------------------------------------------
+
+// ========================== Method "public Class getClass()" =============================
+
+/*
+import javax.swing.*;
+class Customer{
+
+}
+
+class Demo{
+    public static void main(String args[]){
+        Customer c1=new Customer();
+        Class template=c1.getClass();
+        String name=template.getName();
+        System.out.println(name);
+    }
+}
+
+*/
+
