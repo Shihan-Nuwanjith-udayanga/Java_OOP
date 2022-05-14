@@ -112,3 +112,118 @@ class Demo{
     }
 }
 */
+
+
+// -----------------------------------------------------------------------------------------
+
+// ========================== Method "public String toString()" ============================
+
+/*
+import javax.swing.*;
+class Customer{
+    int code;
+    String name;
+    Customer(int code, String name){
+        this.code=code;
+        this.name=name;
+    }
+}
+
+class Demo{
+    public static void main(String args[]){
+        Customer c1=new Customer(1001,"Danapala");
+        Customer c2=new Customer(1002,"Gunapala");
+        System.out.println(c1); //call c1.toString()
+        System.out.println(c1.toString());
+
+    }
+}
+*/
+
+/*
+import javax.swing.*;
+class Customer{
+    int code;
+    String name;
+    Customer(int code, String name){
+        this.code=code;
+        this.name=name;
+    }
+}
+*/
+/* From class "Object"
+public String toString(){
+	return getClass().getName()+'@'+Integer.toHexString(hashCode());
+}
+*//*
+
+
+class Demo{
+    public static void main(String args[]){
+        Customer c1=new Customer(1001,"Danapala");
+        Customer c2=new Customer(1002,"Gunapala");
+        System.out.println(c1); //call c1.toString()
+        System.out.println(c1.toString());
+
+    }
+}
+*/
+
+/*
+import javax.swing.*;
+class Customer{
+    int code;
+    String name;
+    Customer(int code, String name){
+        this.code=code;
+        this.name=name;
+    }
+    public String toString(){
+        return code+"-"+name;
+    }
+}
+*/
+/* From class "Object"
+public String toString(){
+	return getClass().getName()+'@'+Integer.toHexString(hashCode());
+}
+*//*
+
+
+class Demo{
+    public static void main(String args[]){
+        Customer c1=new Customer(1001,"Danapala");
+        Customer c2=new Customer(1002,"Gunapala");
+        System.out.println(c1); //1001-Danapala
+        System.out.println(c1.toString());
+
+    }
+}
+*/
+
+/*
+import javax.swing.*;
+class Customer{
+    int code;
+    String name;
+    Customer(int code, String name){
+        this.code=code;
+        this.name=name;
+    }
+    public String toString(){
+        return code+"-"+name;
+    }
+}
+class Demo{
+    public static void main(String args[]){
+        int x=100;
+        String name="Niroth";
+        Customer c1=new Customer(1001,"Danapala");
+
+        System.out.println(x); //100
+        System.out.println(name); //Niroth
+        System.out.println(c1);//1001-Danapala
+
+    }
+}
+*/
