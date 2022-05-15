@@ -227,3 +227,240 @@ class Demo{
     }
 }
 */
+
+// -----------------------------------------------------------------------------------------------------
+
+//Exercise 01
+
+/*
+class Customer{
+    private int code;
+    private String name;
+    public Customer(int code, String name){this.code=code;this.name=name;}
+}
+
+class CustomerStack{
+    private Node top;
+    public void push(Customer customer){
+        Node node=new Node(customer);
+        node.next=top;
+        top=node;
+    }
+    public Customer pop(){
+        if(top!=null){
+            Customer cus=top.customer;
+            top=top.next;
+            return cus;
+        }
+        return null;
+    }
+    class Node{
+        private Customer customer;
+        private Node next;
+        Node(Customer customer){this.customer=customer;}
+    }
+}
+class Demo{
+    public static void main(String args[]){
+        CustomerStack stack=new CustomerStack();
+        stack.push(new Customer(1001,"Danapala"));
+        stack.push(new Customer(1002,"Gunapala"));
+        stack.push(new Customer(1003,"Somapala"));
+        stack.push(new Customer(1004,"Siripala"));
+        System.out.println(stack); //[1004-Siripala, 1003-Gunapala, 1002-Gunapala, 1001-Danapala]
+
+        Customer topCustomer=stack.pop();
+        System.out.println("Top Customer : "+topCustomer); //1004-Siripala
+
+        System.out.println(stack); //[1004-Siripala, 1003-Gunapala, 1002-Gunapala, 1001-Danapala]
+    }
+}
+*/
+
+//Exercise 02 From 01
+/*
+class Customer{
+    private int code;
+    private String name;
+    public Customer(int code, String name){this.code=code;this.name=name;}
+    public String toString(){
+        return code+"-"+name;
+    }
+}
+
+class CustomerStack{
+    private Node top;
+    public void push(Customer customer){
+        Node node=new Node(customer);
+        node.next=top;
+        top=node;
+    }
+    public Customer pop(){
+        if(top!=null){
+            Customer cus=top.customer;
+            top=top.next;
+            return cus;
+        }
+        return null;
+    }
+    class Node{
+        private Customer customer;
+        private Node next;
+        Node(Customer customer){this.customer=customer;}
+    }
+    public String toString(){
+        String list="[";
+        Node temp=top;
+        while(temp!=null){
+            list+=temp.customer+", ";
+            temp=temp.next;
+        }
+        list+= top==null ? "empty]" : "\b\b]";
+        return list;
+    }
+}
+class Demo{
+    public static void main(String args[]){
+        CustomerStack stack=new CustomerStack();
+        stack.push(new Customer(1001,"Danapala"));
+        stack.push(new Customer(1002,"Gunapala"));
+        stack.push(new Customer(1003,"Somapala"));
+        stack.push(new Customer(1004,"Siripala"));
+        System.out.println(stack); //[1004-Siripala, 1003-Gunapala, 1002-Gunapala, 1001-Danapala]
+
+        Customer topCustomer=stack.pop();
+        System.out.println("Top Customer : "+topCustomer); //1004-Siripala
+
+        System.out.println(stack); //[1004-Siripala, 1003-Gunapala, 1002-Gunapala, 1001-Danapala]
+    }
+}
+*/
+
+// -----------------------------------------------------------------------------------------------------
+
+//exercise 03
+/*
+import javax.swing.*;
+import java.awt.*;
+class Customer{
+    int code;
+    String name;
+    Customer(int code,String name){
+        this.code=code;
+        this.name=name;
+    }
+}
+class NewJFrame extends javax.swing.JFrame {
+    JComboBox customerBox;
+    NewJFrame() {
+        customerBox = new JComboBox();
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setSize(300,300);
+        setLayout(new FlowLayout());
+
+        customerBox.addItem(new Customer(1001,"Danapala"));
+        customerBox.addItem(new Customer(1003,"Gunapala"));
+        customerBox.addItem(new Customer(1002,"Somapala"));
+        customerBox.addItem(new Customer(1004,"Amarapala"));
+
+        add(customerBox);
+    }
+}
+class Demo{
+    public static void main(String args[]){
+        new NewJFrame().setVisible(true);
+    }
+}
+*/
+
+//Exercise 04 From 03
+/*
+import javax.swing.*;
+import java.awt.*;
+class Customer{
+    int code;
+    String name;
+    Customer(int code,String name){
+        this.code=code;
+        this.name=name;
+    }
+    public String toString(){
+        return code+"-"+name;
+    }
+}
+class NewJFrame extends javax.swing.JFrame {
+    JComboBox customerBox;
+    NewJFrame() {
+        customerBox = new JComboBox();
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setSize(300,300);
+        setLayout(new FlowLayout());
+
+        customerBox.addItem(new Customer(1001,"Danapala"));
+        customerBox.addItem(new Customer(1003,"Gunapala"));
+        customerBox.addItem(new Customer(1002,"Somapala"));
+        customerBox.addItem(new Customer(1004,"Amarapala"));
+        add(customerBox);
+    }
+}
+class Demo{
+    public static void main(String args[]){
+        new NewJFrame().setVisible(true);
+    }
+}
+*/
+
+
+// -----------------------------------------------------------------------------------------------------
+
+//Exercise
+/*
+import java.util.*;
+class Customer{
+    int code;
+    String name;
+    Customer(int code,String name){
+        this.code=code;
+        this.name=name;
+    }
+}
+class Demo{
+    public static void main(String args[]){
+        ArrayList ar=new ArrayList();
+        ar.add(new Customer(1001,"Danapala"));
+        ar.add(new Customer(1002,"Gunapala"));
+        ar.add(new Customer(1003,"Somapala"));
+        ar.add(new Customer(1004,"Amarapala"));
+        System.out.println(ar); //ar.toString() of ArrayList--->[1001-Danapala, 1002-Gunapala, 1003-Somapala, 1004-Amarapala]
+
+    }
+}
+*/
+
+/*
+import javax.swing.*;
+import java.util.*;
+class Customer{
+    int code;
+    String name;
+    Customer(int code,String name){
+        this.code=code;
+        this.name=name;
+    }
+    public String toString(){
+        return code+"-"+name;
+    }
+}
+
+class Demo{
+    public static void main(String args[]){
+        ArrayList ar=new ArrayList();
+        ar.add(new Customer(1001,"Danapala"));
+        ar.add(new Customer(1002,"Gunapala"));
+        ar.add(new Customer(1003,"Somapala"));
+        ar.add(new Customer(1004,"Amarapala"));
+        System.out.println(ar); //ar.toString() of ArrayList--->[1001-Danapala, 1002-Gunapala, 1003-Somapala, 1004-Amarapala]
+    }
+}
+*/
+
