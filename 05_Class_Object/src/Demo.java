@@ -586,3 +586,138 @@ class Demo{
 }
 */
 
+
+// -----------------------------------------------------------------------------------------
+
+// ================= Overriding method "public boolean equals(Object)" ======================
+
+//Q01
+/*
+import javax.swing.*;
+import java.util.*;
+class Customer{
+    int code;
+    String name;
+    Customer(int code,String name){
+        this.code=code;
+        this.name=name;
+    }
+    public String toString(){
+        return code+"-"+name;
+    }
+	*/
+/*
+	public boolean equals(Object obj){
+		return true;
+	}
+	*//*
+
+}
+
+class Demo{
+    public static void main(String args[]){
+        Customer c1=new Customer(1001,"Danapala");
+        Customer c2=new Customer(1001,"Danapala");
+        Customer c3=new Customer(1002,"Gunapala");
+        Customer c4=c1;
+
+        System.out.println("c1==c2 : "+c1.equals(c2)); //false
+        System.out.println("c1==c3 : "+c1.equals(c3)); //false
+        System.out.println("c1==c4 : "+c1.equals(c4)); //true
+
+    }
+}
+*/
+
+//Q02
+/*
+import javax.swing.*;
+import java.util.*;
+class Customer{
+    int code;
+    String name;
+    Customer(int code,String name){
+        this.code=code;
+        this.name=name;
+    }
+    public String toString(){
+        return code+"-"+name;
+    }
+
+    public boolean equals(Object obj){
+        //return this.code==obj.code; //? obj.code-->Illegal
+        //Customer c1=obj;
+        Customer c1=(Customer)obj; //Object reference casting
+        return this.code==c1.code;
+    }
+}
+
+class Demo{
+    public static void main(String args[]){
+        Customer c1=new Customer(1001,"Danapala");
+        Customer c2=new Customer(1001,"Danapala");
+        Customer c3=new Customer(1002,"Gunapala");
+        Customer c4=c1;
+
+        System.out.println("c1==c2 : "+c1.equals(c2)); //false
+        System.out.println("c1==c3 : "+c1.equals(c3)); //false
+        System.out.println("c1==c4 : "+c1.equals(c4)); //true
+
+    }
+}
+*/
+
+//Q03
+/*
+import javax.swing.*;
+import java.util.*;
+class Customer{
+    int code;
+    String name;
+    Customer(int code,String name){
+        this.code=code;
+        this.name=name;
+    }
+    public String toString(){
+        return code+"-"+name;
+    }
+    public boolean equals(Object obj){
+        return obj instanceof Customer ? ((Customer)obj).code==this.code : false;
+    }
+}
+
+class Demo{
+    public static void main(String args[]){
+        ArrayList stringList=new ArrayList();
+        stringList.add(new String("A"));
+        stringList.add("B");
+        stringList.add(new String("C"));
+        stringList.add(new String("D"));
+        stringList.add(new String("E"));
+        System.out.println(stringList);//[A,B,C,D,E]
+
+        stringList.remove(1);
+        System.out.println(stringList);//[A,C,D,E]
+
+        stringList.remove(new String("C"));
+        System.out.println(stringList);//[A,D,E]
+
+        ArrayList customerList=new ArrayList();
+        customerList.add(new Customer(1001,"Danapala"));
+        customerList.add(new Customer(1002,"Gunapala"));
+        customerList.add(new Customer(1003,"Somapala"));
+        customerList.add(new Customer(1004,"Amarapala"));
+        customerList.add(new Customer(1005,"Siripala"));
+        System.out.println(customerList);//[1001-Danapala, 1002-Gunapala, 1003-Somapala, 1004-Amarapala, 1005-Siripala]
+
+        customerList.remove(1);
+        System.out.println(customerList);//[1001-Danapala, 1003-Somapala, 1004-Amarapala, 1005-Siripala]
+
+        customerList.remove(new Customer(1003,"Somapala"));
+        System.out.println(customerList);//[1001-Danapala, 1003-Somapala, 1004-Amarapala, 1005-Siripala]
+
+    }
+}
+*/
+
+
