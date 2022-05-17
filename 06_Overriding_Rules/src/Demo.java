@@ -54,3 +54,29 @@ class Demo{
     }
 }
 */
+
+
+//Rule No. 2 (Private Methods)
+//----------------------------
+
+/*
+class Vehicle{
+    private void park(int location){
+        System.out.println("Vehicle Parking...");
+    }
+    public void callPark(int a){
+        park(a);
+    }
+}
+class Car extends Vehicle{
+    public void park(int location){
+        System.out.println("Car Parking...");
+    }
+}
+class Demo{
+    public static void main(String args[]){
+        Vehicle v1=new Car();
+        v1.callPark(1001);
+    }
+}
+*/
