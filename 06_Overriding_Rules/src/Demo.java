@@ -130,3 +130,23 @@ class Car extends Vehicle{
 }
 */
 
+//Exercise
+
+/*class Vehicle{
+    protected void park(int location){
+        System.out.println("Vehicle Parking...");
+    }
+}
+class Car extends Vehicle{
+    *//*Insert code here*//*void park(int location){
+        System.out.println("Car Parking...");
+    }
+}*/
+
+//A. public 	-->Legal
+//B. protected	-->Legal
+//C. default	-->Illegal
+//D. private	-->Illegal
+
+// --------------------------------------------------------------------------------------
+
