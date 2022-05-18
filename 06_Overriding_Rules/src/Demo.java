@@ -150,3 +150,39 @@ class Car extends Vehicle{
 
 // --------------------------------------------------------------------------------------
 
+//Rule No. 5 (Return types)
+//-------------------------
+
+/*
+class Vehicle{
+    public boolean  park(int location){
+        System.out.println("Vehicle Parking...");
+        return true;
+
+    }
+}
+class Car extends Vehicle{
+    public  double park(int location){
+        System.out.println("Car Parking...");
+        return 12.23;
+    }
+}
+*/
+
+/*
+class Super{}
+class Sub extends Super{}
+class Vehicle{
+    public Super  park(int location){
+        System.out.println("Vehicle Parking...");
+        Super ob=new Super();
+        return ob;
+    }
+}
+class Car extends Vehicle{
+    public Sub park(int location){
+        System.out.println("Car Parking...");
+        return new Sub();
+    }
+}
+*/
