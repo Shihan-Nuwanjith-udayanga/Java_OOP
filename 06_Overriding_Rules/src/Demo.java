@@ -82,3 +82,34 @@ class Demo{
 */
 
 
+// Rule No. 3 (Final Methods)
+// --------------------------
+
+/*
+class Vehicle{
+    final public void park(int location){
+        System.out.println("Vehicle Parking...");
+    }
+}
+class Car extends Vehicle{
+    public void park(int location){
+        System.out.println("Car Parking...");
+    }
+}
+*/
+
+//Final Classes
+//-------------
+
+/*
+final class Vehicle{
+    public void park(int location){
+        System.out.println("Vehicle Parking...");
+    }
+}
+class Car extends Vehicle{
+    public void park(int location){
+        System.out.println("Car Parking...");
+    }
+}
+*/
