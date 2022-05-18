@@ -113,3 +113,20 @@ class Car extends Vehicle{
     }
 }
 */
+
+//Rule No. 4
+//-----------
+
+/*
+class Vehicle{
+    public void park(int location){
+        System.out.println("Vehicle Parking...");
+    }
+}
+class Car extends Vehicle{
+    protected void park(int location){ //Illegal
+        System.out.println("Car Parking...");
+    }
+}
+*/
+
