@@ -191,8 +191,9 @@ class Car extends Vehicle{
 
 //Exercise
 //--------
-/*
 
+//Q 01
+/*
 class Customer{
     private int code;
     private String name;
@@ -257,4 +258,150 @@ class Demo{
 }
 */
 
+
+//Q02 From Q01(Using Class "Object")
+//--------------------------------
+/*
+class Customer{
+    private int code;
+    private String name;
+    public Customer(int code, String name){this.code=code;this.name=name;}
+    public String toString(){
+        return code+"-"+name;
+    }
+}
+class Item{
+    int itemCode;
+    String description;
+    Item(int itemCode, String description){
+        this.itemCode=itemCode;
+        this.description=description;
+    }
+    public String toString(){
+        return itemCode+"-"+description;
+    }
+}
+class Stack{
+    private Node top;
+    public void push(Object obj){
+        Node node=new Node(obj);
+        node.next=top;
+        top=node;
+    }
+    public Object pop(){
+        if(top!=null){
+            Object obj=top.obj;
+            top=top.next;
+            return obj;
+        }
+        return null;
+    }
+    class Node{
+        private Object obj;
+        private Node next;
+        Node(Object obj){this.obj=obj;}
+    }
+    public String toString(){
+        String list="[";
+        Node temp=top;
+        while(temp!=null){
+            list+=temp.obj+", ";
+            temp=temp.next;
+        }
+        list+= top==null ? "empty]" : "\b\b]";
+        return list;
+    }
+}
+class Demo{
+    public static void main(String args[]){
+        Stack customerStack=new Stack();
+        customerStack.push(new Customer(1001,"Danapala"));
+        customerStack.push(new Customer(1002,"Gunapala"));
+        customerStack.push(new Customer(1003,"Somapala"));
+        customerStack.push(new Customer(1004,"Siripala"));
+        System.out.println(customerStack);
+
+        Stack itemStack=new Stack();
+        itemStack.push( new Item(1,"A"));
+        itemStack.push( new Item(2,"B"));
+        itemStack.push( new Item(3,"C"));
+        System.out.println(itemStack);
+    }
+}
+*/
+
+//Q03 From Q02
+//------------
+/*
+class Customer{
+    private int code;
+    private String name;
+    public Customer(int code, String name){this.code=code;this.name=name;}
+    public String toString(){
+        return code+"-"+name;
+    }
+}
+class Item{
+    int itemCode;
+    String description;
+    Item(int itemCode, String description){
+        this.itemCode=itemCode;
+        this.description=description;
+    }
+    public String toString(){
+        return itemCode+"-"+description;
+    }
+}
+class Stack{
+    private Node top;
+    public void push(Object obj){
+        Node node=new Node(obj);
+        node.next=top;
+        top=node;
+    }
+    public Object pop(){
+        if(top!=null){
+            Object obj=top.obj;
+            top=top.next;
+            return obj;
+        }
+        return null;
+    }
+    class Node{
+        private Object obj;
+        private Node next;
+        Node(Object obj){this.obj=obj;}
+    }
+    public String toString(){
+        String list="[";
+        Node temp=top;
+        while(temp!=null){
+            list+=temp.obj+", ";
+            temp=temp.next;
+        }
+        list+= top==null ? "empty]" : "\b\b]";
+        return list;
+    }
+}
+class Demo{
+    public static void main(String args[]){
+        Stack customerStack=new Stack();
+        customerStack.push(new Customer(1001,"Danapala"));
+        customerStack.push(new Customer(1002,"Gunapala"));
+        customerStack.push(new Customer(1003,"Somapala"));
+        customerStack.push(new Customer(1004,"Siripala"));
+        customerStack.push(new Item(1,"D")); //Legal ->push(Object ob)
+        System.out.println(customerStack);
+
+        Customer topCustomer=(Customer)customerStack.pop(); //Object pop()==>Runtime error
+
+        Stack itemStack=new Stack();
+        itemStack.push( new Item(1,"A"));
+        itemStack.push( new Item(2,"B"));
+        itemStack.push( new Item(3,"C"));
+        itemStack.push(new Customer(1005,"Amarapala")); //Legal
+        System.out.println(itemStack);
+    }
+}
+*/
 
