@@ -186,3 +186,75 @@ class Car extends Vehicle{
     }
 }
 */
+
+// -------------------------------------------------------------------------------------------
+
+//Exercise
+//--------
+/*
+
+class Customer{
+    private int code;
+    private String name;
+    public Customer(int code, String name){this.code=code;this.name=name;}
+    public String toString(){
+        return code+"-"+name;
+    }
+}
+class Item{
+    int itemCode;
+    String description;
+    Item(int itemCode, String description){
+        this.itemCode=itemCodel;
+        this.description=description;
+    }
+}
+class CustomerStack{
+    private Node top;
+    public void push(Customer customer){
+        Node node=new Node(customer);
+        node.next=top;
+        top=node;
+    }
+    public Customer pop(){
+        if(top!=null){
+            Customer cus=top.customer;
+            top=top.next;
+            return cus;
+        }
+        return null;
+    }
+    class Node{
+        private Customer customer;
+        private Node next;
+        Node(Customer customer){this.customer=customer;}
+    }
+    public String toString(){
+        String list="[";
+        Node temp=top;
+        while(temp!=null){
+            list+=temp.customer+", ";
+            temp=temp.next;
+        }
+        list+= top==null ? "empty]" : "\b\b]";
+        return list;
+    }
+}
+class Demo{
+    public static void main(String args[]){
+        CustomerStack stack=new CustomerStack();
+        stack.push(new Customer(1001,"Danapala"));
+        stack.push(new Customer(1002,"Gunapala"));
+        stack.push(new Customer(1003,"Somapala"));
+        stack.push(new Customer(1004,"Siripala"));
+        System.out.println(stack);
+
+        CustomerStack stack2=new CustomerStack();
+        stack2.push( new Item(1,"A"));
+        stack2.push( new Item(2,"B"));
+        stack2.push( new Item(3,"C"));
+    }
+}
+*/
+
+
