@@ -405,3 +405,108 @@ class Demo{
 }
 */
 
+//Exercise
+//--------
+
+/*
+import java.util.*;
+class Customer{
+    private int code;
+    private String name;
+    public Customer(int code, String name){this.code=code;this.name=name;}
+    public String toString(){
+        return code+"-"+name;
+    }
+}
+class Item{
+    int itemCode;
+    String description;
+    Item(int itemCode, String description){
+        this.itemCode=itemCode;
+        this.description=description;
+    }
+    public String toString(){
+        return itemCode+"-"+description;
+    }
+}
+class Demo{
+    public static void main(String args[]){
+        ArrayList <Customer>customerList=new ArrayList<>();
+        customerList.add(new Customer(1001,"Danapala")); //add(Customer()
+        customerList.add(new Item(1, "AAA")) ; //Illegal
+
+        ArrayList <Item>itemList=new ArrayList<>();
+        itemList.add(new Item(1, "AAA")); //Legal add(Item)
+        itemList.add(new Customer(1001,"Danapala")); //Illegal
+
+        ArrayList objectList=new ArrayList();
+        objectList.add(new Customer(1001,"Danapala"));//add(Object);
+        objectList.add(new Item(1, "AAA")); //Legal
+        objectList.add(new String("abc"));  //Legal
+    }
+}
+*/
+
+
+//Exercise
+//--------
+/*
+import java.util.*;
+class Customer{
+    private int code;
+    private String name;
+    public Customer(int code, String name){this.code=code;this.name=name;}
+    public String toString(){
+        return code+"-"+name;
+    }
+}
+class Demo{
+    public static void main(String args[]){
+        ArrayList <Customer>customerList=new ArrayList<>();
+        customerList.add(new Customer(1001,"Danapala"));
+        customerList.add(new Customer(1002,"Gunapala"));
+        customerList.add(new Customer(1003,"Somapala"));
+        customerList.add(new Customer(1004,"Siripala"));
+
+        for(Customer c : customerList){
+            System.out.println(c);
+        }
+
+        ArrayList objectList=new ArrayList();
+        for(Customer c : objectList){ //Illegal
+
+        }
+    }
+}
+*/
+
+//Exercise
+//--------
+/*
+import java.util.*;
+class Customer{
+    private int code;
+    private String name;
+    public Customer(int code, String name){this.code=code;this.name=name;}
+    public String toString(){
+        return code+"-"+name;
+    }
+}
+class Demo{
+    public static void main(String args[]){
+        ArrayList <Customer>customerList=new ArrayList<>();
+        customerList.add(new Customer(1001,"Danapala"));
+        customerList.add(new Customer(1002,"Gunapala"));
+        customerList.add(new Customer(1003,"Somapala"));
+        customerList.add(new Customer(1004,"Siripala"));
+
+        ArrayList objectList=customerList;
+        objectList.add(new String("abc"));
+        System.out.println(customerList);
+
+        for(Customer c : customerList){ //Runtime Error
+            System.out.println(c);
+        }
+    }
+}
+*/
