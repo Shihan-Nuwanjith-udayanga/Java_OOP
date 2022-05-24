@@ -261,6 +261,70 @@ interface Demo{
 
 // --------------------------------------------------------------------------------------------------------
 
+//Exercise
+//--------
+/*
+interface Vehicle{
+    void m1(); 	//Line 1
+    void m2(){}	//Line 2
+    abstract void m3(); 	//Line 3
+    abstract void m4(){} 	//Line 4
+    default void m5(){} 	//Line 5
+    abstract default void m6(){}	//Line 6
+    static void m7(){}		//Line 8
+    static void m8();	//Line 9
+    abstract static void m9(){} //Line 10
+}
+*/
 
+
+//Exercise
+//--------
+/*
+interface Vehicle{
+    void m1();
+    default void m2(){}
+}
+class A{
+    void m2(){}
+}
+class B extends A implements Vehicle{
+    public void m1(){
+        //
+    }
+
+}
+*/
+
+
+//Exercise
+//--------
+/*
+interface Vehicle{
+    default void m2(){
+        System.out.println("default m2 of Vehicle");
+    }
+}
+class A{
+    public void m2(){
+        System.out.println("m2 of A");
+    }
+}
+class B extends A implements Vehicle{ //Legal
+    //
+}
+class Demo{
+    public static void main(String args[]){
+        B b1=new B();
+        b1.m2(); //?
+
+        A a1=b1;
+        a1.m2();
+
+        Vehicle v1=b1;
+        v1.m2();
+    }
+}
+*/
 
 
