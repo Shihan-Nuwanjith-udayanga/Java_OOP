@@ -450,3 +450,48 @@ class Demo{
 */
 
 
+// -------------------------------------------------------------------------------------------
+
+//Case XIV Method "Public String toString()"
+//------------------------------------------
+/*
+class Customer{
+    int code;
+    Customer(int code){
+        this.code=code;
+    }
+}
+class Demo{
+    public static void main(String ijse[]){
+        Customer customer= new Customer(001);
+        String value=customer.toString();
+        System.out.println(value);
+        System.out.println(customer);
+    }
+}
+*/
+
+
+/*
+class Customer{
+    int code;
+    Customer(int code){
+        this.code=code;
+    }
+
+    public String toString(){
+        return "Customer -"+code;
+    }
+}
+class Demo{
+    public static void main(String ijse[]){
+        int x=100;
+        String name=new String("IJSE");
+        System.out.println(x);
+        System.out.println(name);
+
+        Customer customer= new Customer(1111);
+        System.out.println(customer);
+    }
+}
+*/
