@@ -327,4 +327,126 @@ class Demo{
 }
 */
 
+// --------------------------------- Class "Object" -----------------------------------------
+
+//Exercise
+//--------
+/*
+class Customer */
+/*extends Object*//*
+{
+}
+class Demo{
+    public static void main(String ijse[]){
+        Customer d= new Customer();
+        String value=d.toString();
+        System.out.println(value);
+    }
+}
+*/
+
+
+//Exercise
+//--------
+/*
+class Customer{
+    Customer(){
+        System.out.println("Customer()");
+    }
+    Customer(int i){
+        System.out.println("Customer(int i)");
+    }
+}
+class Item extends Customer{
+    Item(){
+        System.out.println("Item()");
+    }
+    Item(int i){
+        System.out.println("Item(int i)");
+    }
+}
+class Demo{
+    public static void main(String ijse[]){
+        new Item();
+    }
+}
+*/
+
+
+//Exercise
+//--------
+/*
+class Customer{
+    Customer(){
+        System.out.println("Customer()");
+    }
+    Customer(int i){
+        System.out.println("Customer(int i)");
+    }
+}
+class Item extends Customer{
+    Item(){
+        System.out.println("Item()");
+    }
+    Item(int i){
+        System.out.println("Item(int i)");
+    }
+}
+class Demo{
+    public static void main(String ijse[]){
+        new Item(10);
+    }
+}
+*/
+
+
+//Exercise
+//--------
+/*
+class Customer{
+    Customer(){
+        System.out.println("Customer()");
+    }
+    Customer(int i){
+        System.out.println("Customer(int i)");
+    }
+}
+class Item extends Customer{
+    Item(){
+        super(10);
+        System.out.println("Item()");
+    }
+    Item(int i){
+        System.out.println("Item(int i)");
+    }
+}
+class Demo{
+    public static void main(String ijse[]){
+        new Item();
+    }
+}
+*/
+
+
+
+//Exercise
+//--------
+/*
+import javax.swing.*;
+class Box{
+}
+class A{}
+class B extends A{}
+class Item{
+
+}
+class Demo{
+    public static void main(String ijse[]){
+        A[] a1={new A(),new A(),new B()};
+        A[] a2={new A(),new Item(),new Box()};
+        Object[] ob={new A(),new Item(),new Box(),new JFrame()};
+    }
+}
+*/
+
 
