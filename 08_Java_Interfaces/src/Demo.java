@@ -495,3 +495,88 @@ class Demo{
     }
 }
 */
+
+
+//String Representation of an Object
+//----------------------------------
+/*
+class Customer{
+    int code;
+    Customer(int code){
+        this.code=code;
+    }
+
+    public String toString(){
+        return "Customer -"+code;
+    }
+}
+class Demo{
+    public static void main(String ijse[]){
+        Customer customer1= new Customer(1111);
+        Customer customer2= new Customer(2222);
+        Customer customer3= new Customer(3333);
+        System.out.println(customer1);
+        System.out.println(customer2);
+        System.out.println(customer3);
+    }
+}
+*/
+
+
+// Exercise
+/*
+class Customer{
+    int code;
+    Customer(int code){
+        this.code=code;
+    }
+
+    public String toString(){
+        return "Customer -"+code;
+    }
+}
+class Demo{
+    public static void main(String ijse[]){
+        int x=100,y=100,z=200;
+        System.out.println(x==y);
+        System.out.println(x==z);
+        Customer customer1= new Customer(1001);
+        Customer customer2= new Customer(1001);
+        Customer customer3= new Customer(2002);
+        System.out.println(customer1==customer2);
+        System.out.println(customer1==customer3);
+    }
+}
+*/
+
+
+// Exercise
+/*
+class Customer{
+    int code;
+    Customer(int code){
+        this.code=code;
+    }
+    public String toString(){
+        return "Customer -"+code;
+    }
+    */
+/*public boolean equals(Object obj){
+        return (this == obj);
+    }*//*
+
+    public boolean equals(Object obj){
+        Customer c1=(Customer)obj;
+        return this.code==c1.code;
+    }
+}
+class Demo{
+    public static void main(String ijse[]){
+        Customer customer1= new Customer(1001);
+        Customer customer2= new Customer(1001);
+        Customer customer3= new Customer(2002);
+        System.out.println(customer1.equals(customer2));
+        System.out.println(customer1.equals(customer3));
+    }
+}
+*/
