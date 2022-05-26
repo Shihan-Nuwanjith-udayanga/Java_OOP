@@ -580,3 +580,72 @@ class Demo{
     }
 }
 */
+
+
+// --------------------------------------------------------------------------------------------------------
+
+//Exercise
+//--------
+/*
+import java.util.*;
+class WaterLevelObserver{
+    public void update(int waterLevel){
+        //
+    }
+}
+class Splitter extends WaterLevelObserver{
+    public void update(int waterLevel){
+        System.out.println(waterLevel>=75 ? "Splitter ON": "Splitter OFF");
+    }
+}
+class Alarm extends WaterLevelObserver{
+    public void update(int waterLevel){
+        System.out.println(waterLevel>=50 ? "Alarm ON": "Alarm OFF");
+    }
+}
+class Display  extends WaterLevelObserver{
+    public void update(int waterLevel){
+        System.out.println("Water Level : "+waterLevel);
+    }
+}
+class SMSSender  extends WaterLevelObserver{
+    public void update(int waterLevel){
+        System.out.println("Sending SMS ..."+waterLevel);
+    }
+}
+class ControlRoom{
+    private ArrayList <WaterLevelObserver>observerList=new ArrayList<>(); //java.util.ArrayList
+    private int waterLevel;
+
+    public void addWaterLevelObserver(WaterLevelObserver observer){
+        observerList.add(observer);
+    }
+    public void notifyWaterLevelObservers(){
+        for(WaterLevelObserver observer : observerList){
+            observer.update(waterLevel);
+        }
+    }
+    public void setWaterLevel(int waterLevel){
+        if(this.waterLevel!=waterLevel){
+            this.waterLevel=waterLevel;
+            notifyWaterLevelObservers();
+        }
+    }
+}
+class Demo{
+    public static void main(String args[]){
+        ControlRoom controlRoom =new ControlRoom();
+        controlRoom.addWaterLevelObserver(new Alarm());
+        controlRoom.addWaterLevelObserver(new Display());
+        controlRoom.addWaterLevelObserver(new SMSSender());
+        controlRoom.addWaterLevelObserver(new Splitter());
+
+        Random r=new Random();
+        while(true){
+            int waterLevel=r.nextInt(101);
+            try{Thread.sleep(500);}catch(Exception exe){}
+            controlRoom.setWaterLevel(waterLevel);
+        }
+    }
+}
+*/
