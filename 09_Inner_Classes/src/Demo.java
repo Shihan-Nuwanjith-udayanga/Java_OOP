@@ -138,3 +138,47 @@ class Demo{
 }
 */
 
+
+//Q05 KeyListener vs KeyEvent
+//---------------------------
+/*
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+class MyFrame extends JFrame{
+    JButton setButton;
+    JTextField textFiled;
+    MyFrame(){
+        setTitle("MyFrame");
+        setSize(300,300);
+        setLayout(new FlowLayout());
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+
+        textFiled=new JTextField(10);
+        textFiled.setFont(new Font("",1,25));
+        textFiled.addKeyListener(new TestKeyListener());
+        add(textFiled);
+
+        setButton=new JButton("Set Title");
+        setButton.setFont(new Font("",1,25));
+        add(setButton);
+    }
+}
+class TestKeyListener implements KeyListener{
+    public void keyPressed(KeyEvent evt){
+        System.out.println("keyPressed");
+    }
+    public void keyReleased(KeyEvent evt){
+        System.out.println("keyReleased");
+    }
+    public void keyTyped(KeyEvent evt){
+        System.out.println("keyTyped");
+    }
+}
+class Demo{
+    public static void main(String args[]){
+        new MyFrame().setVisible(true);
+    }
+}
+*/
