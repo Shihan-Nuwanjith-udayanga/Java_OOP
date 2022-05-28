@@ -92,4 +92,49 @@ class Demo{
 */
 
 
+//Q04 (MouseListener vs MouseEvent)
+//---------------------------------
+/*
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+class MyFrame extends JFrame{
+    JButton exitButton;
+    MyFrame(){
+        setTitle("MyFrame");
+        setSize(300,300);
+        setLayout(new FlowLayout());
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+
+        exitButton=new JButton("Exit");
+        exitButton.setFont(new Font("",1,25));
+        //exitButton.addActionListener(new A());
+        exitButton.addMouseListener(new TestMouseListener());
+        add(exitButton);
+    }
+}
+class TestMouseListener implements MouseListener{
+    public void mouseEntered(MouseEvent ect){
+        System.out.println("Mouse entered..");
+    }
+    public void mouseExited(MouseEvent ect){
+        System.out.println("Mouse exited..");
+    }
+    public void mousePressed(MouseEvent ect){
+        System.out.println("Mouse pressed..");
+    }
+    public void mouseReleased(MouseEvent ect){
+        System.out.println("Mouse released..");
+    }
+    public void mouseClicked(MouseEvent ect){
+        System.out.println("Mouse clicked.");
+    }
+}
+class Demo{
+    public static void main(String args[]){
+        new MyFrame().setVisible(true);
+    }
+}
+*/
 
