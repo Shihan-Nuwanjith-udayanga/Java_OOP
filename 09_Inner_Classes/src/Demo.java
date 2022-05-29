@@ -347,7 +347,46 @@ class Demo{
 */
 
 
+//Option III (Regular Inner Classes)
+//----------------------------------
+/*
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+class MyFrame extends JFrame{
+    JButton setButton;
+    JTextField textFiled;
+    MyFrame(){
+        setTitle("MyFrame");
+        setSize(300,300);
+        setLayout(new FlowLayout());
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
 
+        textFiled=new JTextField(10);
+        textFiled.setFont(new Font("",1,25));
+        add(textFiled);
+
+        setButton=new JButton("Set Title");
+        setButton.setFont(new Font("",1,25));
+        setButton.addActionListener(new SetButtonActionListener());
+        add(setButton);
+    }
+    //-----------Member/Regular Inner Class--------------------
+    class SetButtonActionListener implements ActionListener{
+        public void actionPerformed(ActionEvent ect){
+            String text=textFiled.getText();
+            setTitle(text);
+        }
+    }
+    //---------------------------------------------------------
+}
+class Demo{
+    public static void main(String args[]){
+        new MyFrame().setVisible(true);
+    }
+}
+*/
 
 
 
