@@ -224,8 +224,88 @@ class Demo{
 */
 
 
+// ------------------------------------------------------------------------------------------------
 
+//Q01
+//Option I
+//--------
+/*
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+class MyFrame extends JFrame{
+    JButton setButton;
+    JTextField textFiled;
+    MyFrame(){
+        setTitle("MyFrame");
+        setSize(300,300);
+        setLayout(new FlowLayout());
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
 
+        textFiled=new JTextField(10);
+        textFiled.setFont(new Font("",1,25));
+        add(textFiled);
+
+        setButton=new JButton("Set Title");
+        setButton.setFont(new Font("",1,25));
+        setButton.addActionListener(new SetButtonActionListener());
+        add(setButton);
+    }
+}
+class SetButtonActionListener implements ActionListener{
+    MyFrame myFrame;
+    public void actionPerformed(ActionEvent ect){
+        String text=myFrame.textFiled.getText();
+        myFrame.setTitle(text);
+    }
+}
+class Demo{
+    public static void main(String args[]){
+        new MyFrame().setVisible(true);
+    }
+}
+*/
+
+//Q02 From Q01
+/*
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+class MyFrame extends JFrame{
+    JButton setButton;
+    JTextField textFiled;
+    MyFrame(){
+        setTitle("MyFrame");
+        setSize(300,300);
+        setLayout(new FlowLayout());
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+
+        textFiled=new JTextField(10);
+        textFiled.setFont(new Font("",1,25));
+        add(textFiled);
+
+        setButton=new JButton("Set Title");
+        setButton.setFont(new Font("",1,25));
+        setButton.addActionListener(new SetButtonActionListener(this));
+        add(setButton);
+    }
+}
+class SetButtonActionListener implements ActionListener{
+    MyFrame myFrame;
+    SetButtonActionListener(MyFrame myFrame){this.myFrame=myFrame;}
+    public void actionPerformed(ActionEvent ect){
+        String text=myFrame.textFiled.getText();
+        myFrame.setTitle(text);
+    }
+}
+class Demo{
+    public static void main(String args[]){
+        new MyFrame().setVisible(true);
+    }
+}
+*/
 
 
 
