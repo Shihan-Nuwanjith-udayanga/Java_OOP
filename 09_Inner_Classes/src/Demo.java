@@ -509,11 +509,131 @@ class Demo{
 */
 
 
+// -------------------------------------------------------------------------------------------
+
+/*
+class Vehicle{
+    public void park(){
+        System.out.println("Vehicle Parking..");
+    }
+}
+
+class Demo{
+    public static void main(String args[]){
+        Vehicle v1=new Vehicle();
+        v1.park();
+
+        Vehicle v2=new Vehicle(){};
+
+    }
+}
+*/
 
 
+/*
+class Vehicle{
+    public void park(){
+        System.out.println("Vehicle Parking..");
+    }
+}
+
+class Demo{
+    public static void main(String args[]){
+        Vehicle v1=new Vehicle();
+        v1.park();
+
+        Vehicle v2=new Vehicle(){
+            int a;
+            {
+                System.out.println("Instance block....");
+            }
+            public void park(){
+                System.out.println("Car Parking..");
+            }
+            public void anotherMethod(){
+                System.out.println("anotherMethod");
+            }
+        };
+        v2.park();
+
+    }
+}
+*/
 
 
+//Exercise
+//--------
+/*
+class Vehicle{
+    public void park(){
+        System.out.println("Vehicle Parking..");
+    }
+}
 
+class Demo{
+    public static void main(String args[]){
+        Vehicle v2=new Vehicle(){
+            int a;
+            {
+                System.out.println("Instance block....");
+            }
+            public void park(){
+                System.out.println("Car Parking..");
+            }
+            public void anotherMethod(){
+                System.out.println("anotherMethod");
+            }
+        } // ===>;
+        v2.park();
+
+    }
+}
+*/
+
+//Exercise
+//--------
+/*
+abstract class Vehicle{
+    abstract public void park();
+}
+
+class Demo{
+    public static void main(String args[]){
+        Vehicle v1=new Vehicle();
+        Vehicle v2=new Vehicle(){};
+        Vehicle v3=new Vehicle(){
+            public void park(){
+                System.out.println("Car Parking..");
+            }
+        };
+        v3.park();
+
+    }
+}
+*/
+
+
+//Exercise
+//--------
+/*
+interface  Vehicle{
+    public void park();
+}
+
+class Demo{
+    public static void main(String args[]){
+        Vehicle v1=new Vehicle(); //Illegal
+        Vehicle v2=new Vehicle(){}; //Illegal
+        Vehicle v3=new Vehicle(){
+            public void park(){
+                System.out.println("Car Parking..");
+            }
+        };
+        v3.park();
+
+    }
+}
+*/
 
 
 
