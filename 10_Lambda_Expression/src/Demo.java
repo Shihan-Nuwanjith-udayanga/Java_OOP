@@ -255,6 +255,43 @@ class Demo{
 */
 
 
+//Q03 From Q02 (Anonymous Inner)
+//------------------------------
+/*
+interface  Arithmetic{
+    public int  operate(int num1, int num2);
+}
+class Demo{
+    public static void main(String args[]){
+        Arithmetic add=new Arithmetic(){
+            public int  operate(int num1, int num2){
+                return num1+num2;
+            }
+        };
+        Arithmetic sub=new Arithmetic(){
+            public int  operate(int num1, int num2){
+                return num1-num2;
+            }
+        };
+        Arithmetic mul=new Arithmetic(){
+            public int  operate(int num1, int num2){
+                return num1*num2;
+            }
+        };
+        Arithmetic div=new Arithmetic(){
+            public int  operate(int num1, int num2){
+                return num1/num2;
+            }
+        };
+
+        int x=100,y=50;
+        System.out.println(x+" + "+y+" = "+add.operate(x,y));
+        System.out.println(x+" - "+y+" = "+sub.operate(x,y));
+        System.out.println(x+" * "+y+" = "+mul.operate(x,y));
+        System.out.println(x+" / "+y+" = "+div.operate(x,y));
+    }
+}
+*/
 
 
 
