@@ -79,3 +79,66 @@ class Demo{
  */
 
 // -------------------------------------------------------------
+
+
+//Case I
+//------
+/*
+class A{
+    public void mA(){
+        System.out.println("mA");
+    }
+}
+class B extends A{
+    public void mB(){
+        System.out.println("mB");
+    }
+}
+class Demo{
+    public static void main(String args[]){
+        A a1=new A();
+        a1.mA();
+        B b1=(B)a1; //Runtime Error -->ClassCastException
+        b1.mB();
+    }
+}
+*/
+
+//Case II ("instanceof")
+//----------------------
+/*
+class A{
+    public void mA(){
+        System.out.println("mA");
+    }
+}
+class B extends A{
+    public void mB(){
+        System.out.println("mB");
+    }
+}
+class Demo{
+    public static void main(String args[]){
+        A a1=new A();
+        if(a1 instanceof B){
+            B b1=(B)a1;
+            b1.mB();
+        }
+        System.out.println("a1 instanceof of B : "+(a1 instanceof B));
+        a1=new B();
+        if(a1 instanceof B){
+            B b1=(B)a1;
+            b1.mB();
+        }
+        System.out.println("a1 instanceof of B : "+(a1 instanceof B));
+    }
+}
+*/
+
+
+
+
+
+
+
+
