@@ -203,8 +203,67 @@ class Demo{
 }
 */
 
+//Case III
+//--------
+/*
+class A{}
+class B extends A{}
+class C{}
+class Demo{
+    public static void main(String args[]){
+        A a1=new A();
+        B b1=new B();
+        C c1=new C();
+
+        a1=(A)b1; //a1=b1; //Legal
+        b1=(B)a1;
+
+        c1=(C)a1;
+        a1=(A)c1;
+        b1=(B)c1;
+        c1=(C)b1;
+    }
+}
+*/
+
+//Case IV
+//-------
+/*
+class A{}
+interface I{}
+class B{}
+class Demo{
+    public static void main(String args[]){
+        A a1=null;
+        B b1=null;
+        I iob=null;
+
+        //a1=iob;//Illegal
+        a1=(A)iob; //Legal
+        //iob=a1; //Illegal
+        iob=(I)a1; //Legal
+
+        a1=(A)b1;//Illegal
+        b1=(B)a1;//Illegal
+    }
+}
+*/
 
 
+//Case V
+//------
+/*
+final class A{}
+interface I{}
+class B{}
+class Demo{
+    public static void main(String args[]){
+        A a1=null;
+        I iob=null;
 
-
+        a1=(A)iob; //Illegal
+        iob=(I)a1; //Illegal
+    }
+}
+*/
 
