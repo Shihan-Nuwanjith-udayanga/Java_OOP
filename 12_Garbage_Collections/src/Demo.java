@@ -188,4 +188,30 @@ class Demo{
 */
 
 
+//Case VII
+//--------
+/*
+class MyClass{
+    int a;
+    MyClass next;
 
+    MyClass(int a){this.a=a;}
+    public void finalize(){
+        System.out.println("deleted..."+a);
+    }
+}
+class Demo{
+    public static void main(String args[]){
+        System.out.println("start");
+        MyClass c1=new MyClass(100);
+        c1.next=new MyClass(200);
+        c1.next.next=new MyClass(300);
+        c1.next.next.next=c1;
+
+        c1=null;
+        System.gc();
+        try{Thread.sleep(1000);}catch(Exception ex){}
+        System.out.println("end");
+    }
+}
+*/
