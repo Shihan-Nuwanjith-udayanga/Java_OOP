@@ -106,6 +106,30 @@ class Demo{
 */
 
 
+//Case IV (Null Referencing)
+//--------------------------
+/*
+class MyClass{
+    int a;
+    MyClass(int a){this.a=a;}
+    public void finalize(){
+        System.out.println("deleted..."+a);
+    }
+}
+class Demo{
+    public static void main(String args[]){
+        System.out.println("start");
+        MyClass c1=new MyClass(100);
+        //
+        //
+        //
+        c1=null;
+        System.gc(); //request-->Runtime.getRuntime().gc();
+        try{Thread.sleep(1000);}catch(Exception ex){}
+        System.out.println("end");
+    }
+}
+*/
 
 
 
