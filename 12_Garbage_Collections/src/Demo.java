@@ -132,6 +132,30 @@ class Demo{
 */
 
 
+//Case V (Re-assign)
+//------------------
+/*
+class MyClass{
+    int a;
+    MyClass(int a){this.a=a;}
+    public void finalize(){
+        System.out.println("deleted..."+a);
+    }
+}
+class Demo{
+    public static void main(String args[]){
+        System.out.println("start");
+        MyClass c1=new MyClass(100);
+        //
+        //
+        //
+        c1=new MyClass(200);
+        System.gc();
+        try{Thread.sleep(1000);}catch(Exception ex){}
+        System.out.println("end");
+    }
+}
+*/
 
 
 
