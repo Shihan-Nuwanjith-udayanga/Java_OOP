@@ -158,6 +158,34 @@ class Demo{
 */
 
 
+//Case VI (Local Scope)
+//---------------------
+/*
+class MyClass{
+    int a;
+    MyClass(int a){this.a=a;}
+    public void finalize(){
+        System.out.println("deleted..."+a);
+    }
+}
+class Demo{
+    public static void main(String args[]){
+        System.out.println("start");
+        int x=100;
+        if(x>0){
+            MyClass c1=new MyClass(100);
+            //
+            //
+            MyClass c2=new MyClass(200);
+            //
+        }
+
+        System.gc();
+        try{Thread.sleep(1000);}catch(Exception ex){}
+        System.out.println("end");
+    }
+}
+*/
 
 
 
