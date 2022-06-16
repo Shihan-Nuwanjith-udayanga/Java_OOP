@@ -58,3 +58,18 @@ class Demo{
 */
 
 
+/*
+class Demo{
+    public static void myMethod(int...xr){ //int[] xr;
+        for(int i=0; i<xr.length; i++){
+            System.out.print(xr[i]+" ");
+        }
+        System.out.println("");
+    }
+    public static void main(String args[]){
+        Demo.myMethod(100,200,300,400); //Demo.myMethod(new int[]{100,200,300,400});
+        Demo.myMethod(new int[]{100,200,300,400}); //Legal
+    }
+}
+*/
+
