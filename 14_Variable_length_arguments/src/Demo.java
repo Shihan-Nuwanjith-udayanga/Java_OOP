@@ -43,4 +43,18 @@ class Demo{
 }
 */
 
+/*
+class Demo{
+    public static void myMethod(int...xr){ //int[] xr;
+        System.out.println("length : "+xr.length);
+    }
+    public static void main(String args[]){
+        Demo.myMethod(100); //Demo.myMethod(new int[]{100});
+        Demo.myMethod(100,200);//Demo.myMethod(new int[]{100,200});
+        Demo.myMethod(100,200,300);
+        Demo.myMethod(100,200,300,400);
+    }
+}
+*/
+
 
