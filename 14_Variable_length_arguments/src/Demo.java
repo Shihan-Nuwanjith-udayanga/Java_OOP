@@ -73,3 +73,16 @@ class Demo{
 }
 */
 
+/*
+class Demo{
+    public static void myMethod(int...xr){ //int[] xr;
+        for(int i=0; i<xr.length; i++){
+            System.out.print(xr[i]+" ");
+        }
+        System.out.println("length : "+xr.length);
+    }
+    public static void main(String args[]){
+        Demo.myMethod(); //Demo.myMethod(new int[]{});
+    }
+}
+*/
