@@ -109,3 +109,15 @@ class Demo{
 }
 */
 
+/*
+class Demo{
+    public static void myMethod(int...xr){}
+    public static void myMethod(int[] xr){} //Illegal
+    public static void main(String args[]){
+
+    }
+}
+*/
+
+
+
