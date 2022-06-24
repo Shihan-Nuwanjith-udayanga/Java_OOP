@@ -130,16 +130,6 @@ class Demo{
 }
 */
 
-/*
-class Demo{
-    public static void myMethod1(int a, int...xr){}
-    public static void myMethod2(int[]...xr,int a){} //Illegal
-    public static void main(String args[]){
-        Demo.myMethod1(100,200,200,200,200);
-        Demo.myMethod2(100,200,200,200,200);
-    }
-}
-*/
 
 
 
